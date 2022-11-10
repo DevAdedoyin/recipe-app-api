@@ -21,7 +21,8 @@ class CommandTests(SimpleTestCase):
 
     def test_wait_for_db_ready(self, patched_check):
         """Test waiting for database if database ready."""
-        patched_check.return_value = True    # When check is call return true
+        # When check is call return true
+        patched_check.return_value = True
 
         # execute code in wait_for_db. Check if db is ready and check if cmd is set up correctly.
         call_command('wait_for_db')
