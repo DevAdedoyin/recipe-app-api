@@ -26,8 +26,8 @@ services:
     image: postgres:13-alpine
     volumes:
       - dev-db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=devdb
+    environment:    #Initial database config for our db service. dev credential for our local database.
+      - POSTGRES_DB=devdb  # When our db first starts it will create a db called devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=changeme
 
