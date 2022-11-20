@@ -1,10 +1,11 @@
 """
 Tests for models
 """
-import email
-from webbrowser import get
+
 from django.test import TestCase
-from django.contrib.auth import get_user_model  # Imports the default user model
+
+# Imports the default user model
+from django.contrib.auth import get_user_model
 
 
 class ModelTests(TestCase):

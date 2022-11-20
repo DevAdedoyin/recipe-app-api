@@ -1,4 +1,4 @@
-""" 
+"""
 Test custom Django management commands
 """
 
@@ -14,7 +14,7 @@ from django.db.utils import OperationalError
 from django.test import SimpleTestCase
 
 
-# Check helps to chck status of the db
+# Check helps to check status of the db
 @patch('core.management.commands.wait_for_db.Command.check')
 class CommandTests(SimpleTestCase):
     """Test commands."""
@@ -24,10 +24,12 @@ class CommandTests(SimpleTestCase):
         # When check is call return true
         patched_check.return_value = True
 
-        # execute code in wait_for_db. Check if db is ready and check if cmd is set up correctly.
+        # execute code in wait_for_db. Check if db is
+        # ready and check if cmd is set up correctly.
         call_command('wait_for_db')
 
-        # ensures the mock value(check in our cmd) is called with the right param
+        # ensures the mock value(check in our cmd) is
+        # called with the right param
         patched_check.assert_called_once_with(databases=['default'])
 
     @patch('time.sleep')
