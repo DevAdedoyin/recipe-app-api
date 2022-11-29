@@ -1,6 +1,5 @@
 """Tests for recipe APIs"""
 from decimal import Decimal
-from turtle import title
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
@@ -8,7 +7,7 @@ from django.urls import reverse
 
 from rest_framework import status
 from rest_framework.test import APIClient
-from app.recipe import serializers
+
 
 from core.models import Recipe
 
@@ -19,7 +18,7 @@ RECIPES_URL = reverse('recipe:recipe-list')
 
 def detail_url(recipe_id):
     """Create and return a recipe detail URL."""
-    return reverse('recipe:recipe-detail',  args=[recipe_id])
+    return reverse('recipe:recipe-detail', args=[recipe_id])
 
 
 def create_recipe(user, **params):
@@ -31,7 +30,7 @@ def create_recipe(user, **params):
         'description': 'Sample description',
         'link': 'http://example.com/recipe.pdf',
     }
-    defaults.update[params]
+    defaults.update(params)
 
     recipe = Recipe.objects.create(user=user, **defaults)
     return recipe
