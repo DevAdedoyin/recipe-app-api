@@ -148,5 +148,6 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'An API that can be used for upload and store some of your favourite recipes from photos and the web',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_REQUEST': True,
     # OTHER SETTINGS
 }
