@@ -2,7 +2,6 @@
 from decimal import Decimal
 import tempfile
 import os
-from turtle import title
 
 from PIL import Image
 
@@ -12,7 +11,6 @@ from django.urls import reverse
 
 from rest_framework import status
 from rest_framework.test import APIClient
-from app.core.models import User
 
 
 from core.models import Recipe, Tag, Ingredient
